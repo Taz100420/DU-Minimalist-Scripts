@@ -1,0 +1,106 @@
+--Paste this block into the screen
+
+--If text is larger than box, create a new variable ex: local font3 = loadFont("TurretRoad-Bold", 20) or use font2,
+--and then adjust the addText rx and ry values of the Main Text (Hub Contents) to line up new fonts.
+
+local json = require("dkjson")
+
+-- Get input
+local data = json.decode(getInput()) or {} --Data from Programming Board
+
+local layer = createLayer()
+local rx, ry = getResolution()
+local font = loadFont("TurretRoad-Bold", 50)
+local font2 = loadFont("TurretRoad-Bold", 30)
+
+setNextStrokeWidth(layer, 1.5) --Border Width
+setNextStrokeColor(layer, 1,1,1,1) --Border Color-White
+setNextFillColor(layer, 0, 0, 0, 1) --Main Box Fill Color-Black (R,G,B,A)
+addBox(layer, rx/160, ry/20, rx/1.015, ry/5) --Main Box
+setNextFillColor(layer, 0, 0, 1, 1) --Slider Box Fill Color-Blue (R,G,B,A)
+addBox(layer, rx/160, ry/20, data.capacity1*10.08, ry/5) --Slider Box
+setNextFillColor(layer, 1, 1, 1, 1) --Main Text Color-White
+addText(layer, font, "Add Text", rx/4.1, ry/5.49) --Main Text (Hub Contents)
+if data.capacity1 > 50 and data.capacity1 < 75 then --Color Changing Text
+    setNextFillColor(layer, .75, 1, .25, 1) --Yellowish Green
+    addText(layer, font2, data.captext1, rx/2.92, ry/4.3) else if 
+        data.capacity1 > 75 and data.capacity1 < 100 then
+        setNextFillColor(layer, 1, .4, 0, 1) --Orange
+        addText(layer, font2, data.captext1, rx/2.92, ry/4.3) else if
+            data.capacity1 == 100 then
+            setNextFillColor(layer, 1, 0, 0, 1) --Red
+            addText(layer, font2, data.captext1, rx/2.92, ry/4.3) else
+            setNextFillColor(layer, 0, 1, 0, 1) --Green
+            addText(layer, font2, data.captext1, rx/2.92, ry/4.3)
+      end
+   end
+end
+
+setNextStrokeWidth(layer, 1.5)
+setNextStrokeColor(layer, 1,1,1,1)
+setNextFillColor(layer, 0, 0, 0, 1)
+addBox(layer, rx/160, ry/3.9, rx/1.015, ry/5)
+setNextFillColor(layer, 0, 0, 1, 1)
+addBox(layer, rx/160, ry/3.9, data.capacity2*10.08, ry/5)
+setNextFillColor(layer, 1, 1, 1, 1)
+addText(layer, font, "Add Text", rx/4.1, ry/2.54)
+if data.capacity2 > 50 and data.capacity2 < 75 then
+    setNextFillColor(layer, .75, 1, .25, 1)
+    addText(layer, font2, data.captext2, rx/2.92, ry/2.27) else if 
+        data.capacity2 > 75 and data.capacity2 < 100 then
+        setNextFillColor(layer, 1, .4, 0, 1)
+        addText(layer, font2, data.captext2, rx/2.92, ry/2.27) else if
+            data.capacity2 == 100 then
+            setNextFillColor(layer, 1, 0, 0, 1)
+            addText(layer, font2, data.captext2, rx/2.92, ry/2.27) else
+            setNextFillColor(layer, 0, 1, 0, 1)
+            addText(layer, font2, data.captext2, rx/2.92, ry/2.27)
+      end
+   end
+end
+
+setNextStrokeWidth(layer, 1.5)
+setNextStrokeColor(layer, 1,1,1,1)
+setNextFillColor(layer, 0, 0, 0, 1)
+addBox(layer, rx/160, ry/1.855, rx/1.015, ry/5)
+setNextFillColor(layer, 0, 0, 1, 1)
+addBox(layer, rx/160, ry/1.855, data.capacity3*10.08, ry/5)
+setNextFillColor(layer, 1, 1, 1, 1)
+addText(layer, font, "Add Text", rx/4.1, ry/1.49)
+if data.capacity3 > 50 and data.capacity3 < 75 then
+    setNextFillColor(layer, .75, 1, .25, 1)
+    addText(layer, font2, data.captext3, rx/2.92, ry/1.38) else if 
+        data.capacity3 > 75 and data.capacity3 < 100 then
+        setNextFillColor(layer, 1, .4, 0, 1)
+        addText(layer, font2, data.captext3, rx/2.92, ry/1.38) else if
+            data.capacity3 == 100 then
+            setNextFillColor(layer, 1, 0, 0, 1)
+            addText(layer, font2, data.captext3, rx/2.92, ry/1.38) else
+            setNextFillColor(layer, 0, 1, 0, 1)
+            addText(layer, font2, data.captext3, rx/2.92, ry/1.38)
+      end
+   end
+end
+
+setNextStrokeWidth(layer, 1.5)
+setNextStrokeColor(layer, 1,1,1,1)
+setNextFillColor(layer, 0, 0, 0, 1)
+addBox(layer, rx/160, ry/1.342, rx/1.015, ry/5)
+setNextFillColor(layer, 0, 0, 1, 1)
+addBox(layer, rx/160, ry/1.342, data.capacity4*10.08, ry/5)
+setNextFillColor(layer, 1, 1, 1, 1)
+addText(layer, font, "Add Text", rx/4.1, ry/1.14)
+if data.capacity4 > 50 and data.capacity4 < 75 then
+    setNextFillColor(layer, .75, 1, .25, 1)
+    addText(layer, font2, data.captext4, rx/2.92, ry/1.08) else if 
+        data.capacity4 > 75 and data.capacity4 < 100 then
+        setNextFillColor(layer, 1, .4, 0, 1)
+        addText(layer, font2, data.captext4, rx/2.92, ry/1.08) else if
+            data.capacity4 == 100 then
+            setNextFillColor(layer, 1, 0, 0, 1)
+            addText(layer, font2, data.captext4, rx/2.92, ry/1.08) else
+            setNextFillColor(layer, 0, 1, 0, 1)
+            addText(layer, font2, data.captext4, rx/2.92, ry/1.08)
+      end
+   end
+end
