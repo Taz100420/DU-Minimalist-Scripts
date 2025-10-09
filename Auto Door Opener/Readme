@@ -1,3 +1,3 @@
 Connect screen first, then light and door last. Connect a detector to the PB. Paste the json into PB and add names to list.
 There are 2 door activation options within the PB: Forcefield and sliding doors.
-Uncomment/comment options in system onUpdate and onStop under papproved/pdenied. Default is sliding doors.
+Uncomment/comment options in system onUpdate and onStop under papproved/pdenied/required. Default is sliding doors.
