@@ -1,6 +1,5 @@
 --Need Telemeter. Paste into System->onUpdate in the control unit. Link gears to a relay and then relay to switch.
 --Call switch gears from the input.
---Known Issue: Gears deploy in space. Just press G to retract.
 
 groundalt = telemeter.raycast().distance
 altitude = core.getAltitude()
@@ -18,3 +17,4 @@ if groundalt < targetalt then
 if altitude < targetalt then
     gears.deactivate()
     end
+
