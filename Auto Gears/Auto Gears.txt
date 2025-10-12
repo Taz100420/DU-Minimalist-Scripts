@@ -11,9 +11,6 @@ if groundalt == -1 then
     end
 
 if groundalt < targetalt then
-    gears.activate()
-    end
-
-if groundalt > targetalt then
+    gears.activate() else
     gears.deactivate()
     end
