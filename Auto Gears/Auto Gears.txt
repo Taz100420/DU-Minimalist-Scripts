@@ -4,6 +4,7 @@
 
 groundalt = telemeter.raycast().distance
 altitude = core.getAltitude()
+gravity = core.getGravityIntensity()
 targetalt = 20 --export
 
 if groundalt == -1 then
@@ -18,3 +19,4 @@ if groundalt < targetalt then
 if altitude == 0 and gravity < .1 then
     gears.deactivate()
     end
+
